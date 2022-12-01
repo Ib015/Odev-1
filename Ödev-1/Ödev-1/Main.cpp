@@ -1,13 +1,13 @@
 /****************************************************************************
-**					SAKARYA ÜNİVERSİTESİ
-**			         BİLGİSAYAR VE BİLİŞİM BİLİMLERİ FAKÜLTESİ
-**				    BİLGİSAYAR MÜHENDİSLİĞİ BÖLÜMÜ
-**				          PROGRAMLAMAYA GİRİŞİ DERSİ
+**					SAKARYA ÃœNÄ°VERSÄ°TESÄ°
+**			         BÄ°LGÄ°SAYAR VE BÄ°LÄ°ÅÄ°M BÄ°LÄ°MLERÄ° FAKÃœLTESÄ°
+**				    BÄ°LGÄ°SAYAR MÃœHENDÄ°SLÄ°ÄÄ° BÃ–LÃœMÃœ
+**				          PROGRAMLAMAYA GÃRÃÃÃ DERSÃ
 **
-**				ÖDEV NUMARASI…...:  1
-**				ÖĞRENCİ ADI...............: İbrahim Talha Durna
-**				ÖĞRENCİ NUMARASI.: B221210006
-**				DERS GRUBU…………: A
+**				Ã–DEV NUMARASIâ€¦...:  1
+**				Ã–ÃRENCÃ ADI...............: Ãbrahim Talha Durna
+**				Ã–ÃRENCÃ NUMARASI.: B221210006
+**				DERS GRUBUâ€¦â€¦â€¦â€¦: A
 ****************************************************************************/
 
 
@@ -19,7 +19,7 @@
 using namespace std;
 
 
-struct Oğrenci
+struct OÃ°renci
 {
 	string Adi , Soyadi;
 	float No=0, KisaSinav1=0, KisaSinav2=0, Odev1=0, Odev2=0, Proje=0, Vize=0, FinalNotu=0;
@@ -31,7 +31,7 @@ struct Tarih
 };
 
 
-//notları harf notuna çeviren fonksiyon
+//notlarÃ½ harf notuna Ã§eviren fonksiyon
 string harfnotu(int sayinotu)
 {
 	string harf;
@@ -82,8 +82,8 @@ string harfnotu(int sayinotu)
 	return harf;
 }
 
-//en büyük notu bulan fonksiyon
-int enbüyüknot(int x)
+//en bÃ¼yÃ¼k notu bulan fonksiyon
+int enbÃ¼yÃ¼knot(int x)
 {
 	static int eb = 0;
 	if (x >= eb)
@@ -94,8 +94,8 @@ int enbüyüknot(int x)
 	return eb;
 }
 
-//en küçük notu bulan fonksiyon
-int enküçüknot(int x)
+//en kÃ¼Ã§Ã¼k notu bulan fonksiyon
+int enkÃ¼Ã§Ã¼knot(int x)
 {
 	static int ek = 100;
 	if (x <= ek)
@@ -119,7 +119,7 @@ int ortalama(int x[100])
 	return ortalama;
 }
 
-//girilen notun doğru olup olmadığını kontrol eden fonksiyon
+//girilen notun doÃ°ru olup olmadÃ½Ã°Ã½nÃ½ kontrol eden fonksiyon
 int kontrol(float min, float maks)
 {
 	float notu;
@@ -129,8 +129,8 @@ int kontrol(float min, float maks)
 	{
 		if (!(notu >= min and notu <= maks))
 		{
-			cout << "Geçersiz Not Girdiniz!" << endl;
-			cout << "Lütfen Tekrar Not Giriniz: ";
+			cout << "GeÃ§ersiz Not Girdiniz!" << endl;
+			cout << "LÃ¼tfen Tekrar Not Giriniz: ";
 			cin >> notu;
 		}
 	} while (!(notu >= min and notu <= maks));
@@ -138,14 +138,14 @@ int kontrol(float min, float maks)
 	return notu;
 }
 
-//girilen 2 değer arasındaki notları gösteren fonksiyon
-void aralık(int alt, int üst, int notdizi, string addizi, string soyaddizi, string harf)
+//girilen 2 deÃ°er arasÃ½ndaki notlarÃ½ gÃ¶steren fonksiyon
+void aralÃ½k(int alt, int Ã¼st, int notdizi, string addizi, string soyaddizi, string harf)
 {
 	static int i = 0;
 
-	if (notdizi >= alt and notdizi <= üst)
+	if (notdizi >= alt and notdizi <= Ã¼st)
 	{
-		cout << i + 1 << ". Öğrenci: " << endl;
+		cout << i + 1 << ". Ã–Ã°renci: " << endl;
 		cout << "ADI SOYADI: " << addizi << " " << soyaddizi << endl;
 		cout << "NOTU: " << notdizi << endl;
 		cout << "HARF NOTU: " << harf << endl << endl;
@@ -153,13 +153,13 @@ void aralık(int alt, int üst, int notdizi, string addizi, string soyaddizi, stri
 	i++;
 }
 
-//girilen değerin altında kalan notları gösteren fonksiyon
-void altinigöster(int notu, int inceleme, string adi, string soyadi, string harf)
+//girilen deÃ°erin altÃ½nda kalan notlarÃ½ gÃ¶steren fonksiyon
+void altinigÃ¶ster(int notu, int inceleme, string adi, string soyadi, string harf)
 {
 	static int i = 0;
 	if (notu < inceleme)
 	{
-		cout << i + 1 << ". Öğrenci: " << endl;
+		cout << i + 1 << ". Ã–Ã°renci: " << endl;
 		cout << "ADI SOYADI: " << adi << " " << soyadi << endl;
 		cout << "NOTU: " << notu << endl;
 		cout << "HARF NOTU: " << harf << endl << endl;
@@ -167,13 +167,13 @@ void altinigöster(int notu, int inceleme, string adi, string soyadi, string harf
 	i++;
 }
 
-//girilen değerin üstünde kalan notları gösteren fonksiyon
-void üstünügöster(int notu, int inceleme, string adi, string soyadi, string harf)
+//girilen deÃ°erin Ã¼stÃ¼nde kalan notlarÃ½ gÃ¶steren fonksiyon
+void Ã¼stÃ¼nÃ¼gÃ¶ster(int notu, int inceleme, string adi, string soyadi, string harf)
 {
 	static int i = 0;
 	if (notu > inceleme)
 	{
-		cout << i + 1 << ". Öğrenci: " << endl;
+		cout << i + 1 << ". Ã–Ã°renci: " << endl;
 		cout << "ADI SOYADI: " << adi << " " << soyadi << endl;
 		cout << "NOTU: " << notu << endl;
 		cout << "HARF NOTU: " << harf << endl << endl;
@@ -181,33 +181,33 @@ void üstünügöster(int notu, int inceleme, string adi, string soyadi, string harf
 	i++;
 }
 
-//menü fonksiyonu
-void menü()
+//menÃ¼ fonksiyonu
+void menÃ¼()
 {
-	cout << "1- SINIF LİSTESİNİ GÖRÜNTÜLE" << endl;
-	cout << "2- SINIFIN EN YÜKSEK NOTUNU GÖRÜNTÜLE" << endl;
-	cout << "3- SINIFIN EN DÜŞÜK NOTUNU GÖRÜNTÜLE" << endl;
-	cout << "4- SINIFIN ORTALAMASINI GÖRÜNTÜLE" << endl;
-	cout << "5- SINIFIN STANDART SAPMASINI GÖRÜNTÜLE" << endl;
-	cout << "6- SEÇİLEN ARALIKTAKİ NOTLARI GÖRÜNTÜLE" << endl;
-	cout << "7- SEÇİLEN DEĞERİN ALTINDAKİ NOTLARI GÖRÜNTÜLE" << endl;
-	cout << "8- SEÇİLEN DEĞERİN ÜSTÜNDEKİ NOTLARI GÖRÜNTÜLE" << endl;
-	cout << "9- ÇIKIŞ" << endl;
+	cout << "1- SINIF LÃSTESÃNÃ GÃ–RÃœNTÃœLE" << endl;
+	cout << "2- SINIFIN EN YÃœKSEK NOTUNU GÃ–RÃœNTÃœLE" << endl;
+	cout << "3- SINIFIN EN DÃœÃÃœK NOTUNU GÃ–RÃœNTÃœLE" << endl;
+	cout << "4- SINIFIN ORTALAMASINI GÃ–RÃœNTÃœLE" << endl;
+	cout << "5- SINIFIN STANDART SAPMASINI GÃ–RÃœNTÃœLE" << endl;
+	cout << "6- SEÃ‡ÃLEN ARALIKTAKÃ NOTLARI GÃ–RÃœNTÃœLE" << endl;
+	cout << "7- SEÃ‡ÃLEN DEÃERÃN ALTINDAKÃ NOTLARI GÃ–RÃœNTÃœLE" << endl;
+	cout << "8- SEÃ‡ÃLEN DEÃERÃN ÃœSTÃœNDEKÃ NOTLARI GÃ–RÃœNTÃœLE" << endl;
+	cout << "9- Ã‡IKIÃ" << endl;
 }
 
-//20'şer 20'şer öğrenci listeleyen fonksiyon
+//20'Ã¾er 20'Ã¾er Ã¶Ã°renci listeleyen fonksiyon
 void listele(int notu, string adi, string soyadi, string harf, int gun, int ay, int yil)
 {
 	static int sira = 0;
 		
-	bool döngü = 1;
+	bool dÃ¶ngÃ¼ = 1;
 	static int a = 0;
 			
-	cout << (sira + 1) << ". Öğrenci: " << endl;
+	cout << (sira + 1) << ". Ã–Ã°renci: " << endl;
 	cout << "ADI-SOYADI: " << adi << " " << soyadi << endl;	
 	cout << "NOTU: " << notu << endl;
 	cout << "HARF NOTU: " << harf << endl;
-	cout << "DOĞUM TARİHİ: " << gun << "/" << ay << "/" << yil << endl << endl;
+	cout << "DOÃUM TARÃHÃ: " << gun << "/" << ay << "/" << yil << endl << endl;
 	sira++;
 	a++;
 	
@@ -249,33 +249,33 @@ int main()
 {
 	setlocale(LC_ALL, "Turkish");
 
-	string ad[30] = { "Ali","Ahmet","Aslı","Ayşe","İbrahim","Melih","Süleyman","Deniz","Mehmet","Merve","Rümeysa","Fatih","Sıla",
-		"Çağrı", "Seda", "Uğur", "Selim", "Buse", "Aybüke", "Yusuf", "Kaan", "Gizem", "Hilal", "İrem","Halil","Hüseyin","Recep",
+	string ad[30] = { "Ali","Ahmet","AslÃ½","AyÃ¾e","Ãbrahim","Melih","SÃ¼leyman","Deniz","Mehmet","Merve","RÃ¼meysa","Fatih","SÃ½la",
+		"Ã‡aÃ°rÃ½", "Seda", "UÃ°ur", "Selim", "Buse", "AybÃ¼ke", "Yusuf", "Kaan", "Gizem", "Hilal", "Ãrem","Halil","HÃ¼seyin","Recep",
 		"Beyza","Berk","Ece"
 	};
-	string soyad[30] = { "Kaya","Yılmaz","Çelik","Ünal","Kaplan","Çalışkan","Uysal","Terim","Keser","Akgül","Aksu","Kutbay","Önal",
-	"Yalçın","Ay","Gültekin","Özdemir","Altınkaynak","Koç","Apaydın","Kadıoğlu","Yöntem","Arslan","Kayalı","Karagöz","Sağlam",
-	"Atılgan","Işık","Çavuş","Semerci"
+	string soyad[30] = { "Kaya","YÃ½lmaz","Ã‡elik","Ãœnal","Kaplan","Ã‡alÃ½Ã¾kan","Uysal","Terim","Keser","AkgÃ¼l","Aksu","Kutbay","Ã–nal",
+	"YalÃ§Ã½n","Ay","GÃ¼ltekin","Ã–zdemir","AltÃ½nkaynak","KoÃ§","ApaydÃ½n","KadÃ½oÃ°lu","YÃ¶ntem","Arslan","KayalÃ½","KaragÃ¶z","SaÃ°lam",
+	"AtÃ½lgan","IÃ¾Ã½k","Ã‡avuÃ¾","Semerci"
 	};
 
-	Oğrenci ögrenciListe[100];
-	Tarih ögrenci[100];
-	int ögrenciNotu[100];
+	OÃ°renci Ã¶grenciListe[100];
+	Tarih Ã¶grenci[100];
+	int Ã¶grenciNotu[100];
 	string HarfNotu[100];
 	string OkulNo[100];
-	int DönemiciNot[100];
-	int EnBüyük;
-	int EnKüçük;
+	int DÃ¶nemiciNot[100];
+	int EnBÃ¼yÃ¼k;
+	int EnKÃ¼Ã§Ã¼k;
 	int secim;
-	string tekrarGörüntüleme;
-	string tekrarGörüntüleme2;
+	string tekrarGÃ¶rÃ¼ntÃ¼leme;
+	string tekrarGÃ¶rÃ¼ntÃ¼leme2;
 	int ort = 0;
 	int StandartSapma;
 
 	
 
-	cout << "Notların Rastgele Girilmesini İstiyorsanız 1'e Basın" << endl;
-	cout << "Notları Elle Girmek İstiyorsanız 2'ye Basın" << endl;
+	cout << "NotlarÃ½n Rastgele Girilmesini ÃstiyorsanÃ½z 1'e BasÃ½n" << endl;
+	cout << "NotlarÃ½ Elle Girmek ÃstiyorsanÃ½z 2'ye BasÃ½n" << endl;
 	
 	
 	do
@@ -286,158 +286,158 @@ int main()
 		{
 		case 1:
 			srand(time(NULL));
-			//100 öğrenciye rastgele isim ve soyisim ve doğum tarihi
+			//100 Ã¶Ã°renciye rastgele isim ve soyisim ve doÃ°um tarihi
 			int Rastgeleisim, Rastgelesoyisim;
 
 			for (int i = 0; i < 100; i++)
 			{
-				ögrenci[i].gun = 1 + rand() % 31;
-				ögrenci[i].ay = 1 + rand() % 12;
-				ögrenci[i].yil = 2000 + rand() % 5;
+				Ã¶grenci[i].gun = 1 + rand() % 31;
+				Ã¶grenci[i].ay = 1 + rand() % 12;
+				Ã¶grenci[i].yil = 2000 + rand() % 5;
 				Rastgeleisim = rand() % 30;
 				Rastgelesoyisim = rand() % 30;
-				ögrenciListe[i].Adi = ad[Rastgeleisim];
-				ögrenciListe[i].Soyadi = soyad[Rastgelesoyisim];
+				Ã¶grenciListe[i].Adi = ad[Rastgeleisim];
+				Ã¶grenciListe[i].Soyadi = soyad[Rastgelesoyisim];
 			}
-			// 100 öğrenciye istenen kriterlere göre rastgele not atadım
+			// 100 Ã¶Ã°renciye istenen kriterlere gÃ¶re rastgele not atadÃ½m
 			for (int i = 0; i < 10; i++)
 			{
-				ögrenciNotu[i] = rand() % 40;
+				Ã¶grenciNotu[i] = rand() % 40;
 			}
 			for (int i = 10; i < 60; i++)
 			{
-				ögrenciNotu[i] = 40 + rand() % 30;
+				Ã¶grenciNotu[i] = 40 + rand() % 30;
 			}
 			for (int i = 60; i < 75; i++)
 			{
-				ögrenciNotu[i] = 70 + rand() % 10;
+				Ã¶grenciNotu[i] = 70 + rand() % 10;
 			}
 			for (int i = 75; i < 100; i++)
 			{
-				ögrenciNotu[i] = 80 + rand() % 21;
+				Ã¶grenciNotu[i] = 80 + rand() % 21;
 			}
-			//fonksiyon yardımıyla öğrencilerin harf notlarını atadım
+			//fonksiyon yardÃ½mÃ½yla Ã¶Ã°rencilerin harf notlarÃ½nÃ½ atadÃ½m
 			for (int i = 0; i < 100; i++)
 			{
-				HarfNotu[i] = harfnotu(ögrenciNotu[i]);
+				HarfNotu[i] = harfnotu(Ã¶grenciNotu[i]);
 			}
 
-			int menüSecim;
+			int menÃ¼Secim;
 			
 			do
 			{
 				do
 				{
-					menü();
+					menÃ¼();
 					cout << endl;
-					cout << "Görüntülemek İstediğiniz Seçeneği Seçiniz" << endl;
-					cin >> menüSecim; cout << endl;
+					cout << "GÃ¶rÃ¼ntÃ¼lemek ÃstediÃ°iniz SeÃ§eneÃ°i SeÃ§iniz" << endl;
+					cin >> menÃ¼Secim; cout << endl;
 
-					switch (menüSecim)
+					switch (menÃ¼Secim)
 					{
 					case 1:
-						//öğrenciler fonksiyon ile 20'şer 20'şer listeleniyor
+						//Ã¶Ã°renciler fonksiyon ile 20'Ã¾er 20'Ã¾er listeleniyor
 						for (int i = 0; i < 100; i++)
 						{
-							listele(ögrenciNotu[i], ögrenciListe[i].Adi, ögrenciListe[i].Soyadi, HarfNotu[i], ögrenci[i].gun, ögrenci[i].ay, ögrenci[i].yil);
+							listele(Ã¶grenciNotu[i], Ã¶grenciListe[i].Adi, Ã¶grenciListe[i].Soyadi, HarfNotu[i], Ã¶grenci[i].gun, Ã¶grenci[i].ay, Ã¶grenci[i].yil);
 						}
 						break;
 
 					case 2:
-						//en büyük not fonksiyon ile hesaplanıp ekrana yazdırılıyor
+						//en bÃ¼yÃ¼k not fonksiyon ile hesaplanÃ½p ekrana yazdÃ½rÃ½lÃ½yor
 						for (int i = 0; i < 100; i++)
 						{
-							EnBüyük = enbüyüknot(ögrenciNotu[i]);
+							EnBÃ¼yÃ¼k = enbÃ¼yÃ¼knot(Ã¶grenciNotu[i]);
 						}
 
 						for (int i = 0; i < 100; i++)
 						{
-							if (ögrenciNotu[i] == EnBüyük)
+							if (Ã¶grenciNotu[i] == EnBÃ¼yÃ¼k)
 							{
-								cout << "ADI-SOYADI: " << ögrenciListe[i].Adi << " " << ögrenciListe[i].Soyadi << endl;
-								cout << "NOTU: " << ögrenciNotu[i] << endl << endl;
+								cout << "ADI-SOYADI: " << Ã¶grenciListe[i].Adi << " " << Ã¶grenciListe[i].Soyadi << endl;
+								cout << "NOTU: " << Ã¶grenciNotu[i] << endl << endl;
 							}
 						}
 						
 						break;
 
 					case 3:
-						//en düşük not fonksiyon ile hesaplanıp ekrana yazdırılıyor
+						//en dÃ¼Ã¾Ã¼k not fonksiyon ile hesaplanÃ½p ekrana yazdÃ½rÃ½lÃ½yor
 						for (int i = 0; i < 100; i++)
 						{
-							EnKüçük = enküçüknot(ögrenciNotu[i]);
+							EnKÃ¼Ã§Ã¼k = enkÃ¼Ã§Ã¼knot(Ã¶grenciNotu[i]);
 						}
 
 						for (int i = 0; i < 100; i++)
 						{
-							if (ögrenciNotu[i] == EnKüçük)
+							if (Ã¶grenciNotu[i] == EnKÃ¼Ã§Ã¼k)
 							{
-								cout << "ADI-SOYADI: " << ögrenciListe[i].Adi << " " << ögrenciListe[i].Soyadi << endl;
-								cout << "NOTU: " << ögrenciNotu[i] << endl << endl;
+								cout << "ADI-SOYADI: " << Ã¶grenciListe[i].Adi << " " << Ã¶grenciListe[i].Soyadi << endl;
+								cout << "NOTU: " << Ã¶grenciNotu[i] << endl << endl;
 							}
 						}
 
 						break;
 
 					case 4:
-						//ortalama fonksiyon ile hesaplanıp ekrana yazdırılıyor
-						ort = ortalama(ögrenciNotu);
+						//ortalama fonksiyon ile hesaplanÃ½p ekrana yazdÃ½rÃ½lÃ½yor
+						ort = ortalama(Ã¶grenciNotu);
 						
 						cout << ort << endl;
 						break;
 
 					case 5:
-						//standart sapma fonksiyon ile hesaplanıp ekrana yazdırılıyor
-						StandartSapma = standartSapma(ögrenciNotu);
+						//standart sapma fonksiyon ile hesaplanÃ½p ekrana yazdÃ½rÃ½lÃ½yor
+						StandartSapma = standartSapma(Ã¶grenciNotu);
 						cout << StandartSapma << endl;
 						break;
 
 					case 6:
-						// girilen aralıktaki notları gösterme
-						int alt, üst;
+						// girilen aralÃ½ktaki notlarÃ½ gÃ¶sterme
+						int alt, Ã¼st;
 
-						cout << "Bakmak İstediğiniz Not Aralığını Girin: (önce küçük notu giriniz.) ";
-						cin >> alt >> üst; cout << endl;
+						cout << "Bakmak ÃstediÃ°iniz Not AralÃ½Ã°Ã½nÃ½ Girin: (Ã¶nce kÃ¼Ã§Ã¼k notu giriniz.) ";
+						cin >> alt >> Ã¼st; cout << endl;
 
-						//değerler kontrol ediliyor
-						while (alt > üst)
+						//deÃ°erler kontrol ediliyor
+						while (alt > Ã¼st)
 						{
-							cout << "Önce Küçük Değer Giriniz!" << endl;
-							cin >> alt >> üst; cout << endl;
+							cout << "Ã–nce KÃ¼Ã§Ã¼k DeÃ°er Giriniz!" << endl;
+							cin >> alt >> Ã¼st; cout << endl;
 						}
 
-						//fonksiyon ile iki değer arasındaki notu alan öğrenciler listeleniyor
+						//fonksiyon ile iki deÃ°er arasÃ½ndaki notu alan Ã¶Ã°renciler listeleniyor
 						for (int i = 0; i < 100; i++)
 						{
-							aralık(alt, üst, ögrenciNotu[i], ögrenciListe[i].Adi, ögrenciListe[i].Soyadi, HarfNotu[i]);
+							aralÃ½k(alt, Ã¼st, Ã¶grenciNotu[i], Ã¶grenciListe[i].Adi, Ã¶grenciListe[i].Soyadi, HarfNotu[i]);
 						}
 
 						cout << endl;
 						break;
 
 					case 7:
-						// girilen değerin altındaki notlar fonksiyon yardımı ile gösteriliyor
+						// girilen deÃ°erin altÃ½ndaki notlar fonksiyon yardÃ½mÃ½ ile gÃ¶steriliyor
 						int inceleme;
 
-						cout << "Girdiğiniz Değerin Altında Kalan Notlara Bakmak İçin Bir Değer Girin: ";
+						cout << "GirdiÃ°iniz DeÃ°erin AltÃ½nda Kalan Notlara Bakmak ÃÃ§in Bir DeÃ°er Girin: ";
 						cin >> inceleme; cout << endl;
 
 						for (int i = 0; i < 100; i++)
 						{
-							altinigöster(ögrenciNotu[i], inceleme, ögrenciListe[i].Adi, ögrenciListe[i].Soyadi, HarfNotu[i]);
+							altinigÃ¶ster(Ã¶grenciNotu[i], inceleme, Ã¶grenciListe[i].Adi, Ã¶grenciListe[i].Soyadi, HarfNotu[i]);
 						}
 						break;
 
 					case 8:
-						//fonksiyon ile girilen değerin üstündeki notları gösterme
+						//fonksiyon ile girilen deÃ°erin Ã¼stÃ¼ndeki notlarÃ½ gÃ¶sterme
 						int inceleme2;
 
-						cout << "Girdiğiniz Değerin Üstünde Kalan Notlara Bakmak İçin Bir Değer Girin: ";
+						cout << "GirdiÃ°iniz DeÃ°erin ÃœstÃ¼nde Kalan Notlara Bakmak ÃÃ§in Bir DeÃ°er Girin: ";
 						cin >> inceleme2; cout << endl;
 
 						for (int i = 0; i < 100; i++)
 						{
-							üstünügöster(ögrenciNotu[i], inceleme2, ögrenciListe[i].Adi, ögrenciListe[i].Soyadi, HarfNotu[i]);
+							Ã¼stÃ¼nÃ¼gÃ¶ster(Ã¶grenciNotu[i], inceleme2, Ã¶grenciListe[i].Adi, Ã¶grenciListe[i].Soyadi, HarfNotu[i]);
 						}
 
 						cout << endl;
@@ -449,11 +449,11 @@ int main()
 						break;
 
 					default:
-						cout << "Lütfen Geçerli Bir Değer Giriniz!!!" << endl << endl;
+						cout << "LÃ¼tfen GeÃ§erli Bir DeÃ°er Giriniz!!!" << endl << endl;
 						break;
 
 					}
-				} while (menüSecim > 9 or menüSecim < 1);
+				} while (menÃ¼Secim > 9 or menÃ¼Secim < 1);
 
 				system("pause");
 				system("CLS");
@@ -462,168 +462,168 @@ int main()
 
 			break;
 		case 2:
-			//kullanıcıdan girdileri isteyen ve gerekli hesaplamaları yapan döngü
+			//kullanÃ½cÃ½dan girdileri isteyen ve gerekli hesaplamalarÃ½ yapan dÃ¶ngÃ¼
 			for (int i = 0; i < 100; i++)
 			{
-				cout << i+1 << ". Öğrencinin Adını Giriniz: ";
-				cin >> ögrenciListe[i].Adi;
+				cout << i+1 << ". Ã–Ã°rencinin AdÃ½nÃ½ Giriniz: ";
+				cin >> Ã¶grenciListe[i].Adi;
 
-				cout << i+1 << ". Öğrencinin Soyadını Giriniz: ";
-				cin >> ögrenciListe[i].Soyadi;
+				cout << i+1 << ". Ã–Ã°rencinin SoyadÃ½nÃ½ Giriniz: ";
+				cin >> Ã¶grenciListe[i].Soyadi;
 
-				cout << i + 1 << ". Öğrencinin Doğum Tarihini GG/AA/YYYY Cinsinden Giriniz: ";
-				cin >> ögrenci[i].gun >> ögrenci[i].ay >> ögrenci[i].yil;
+				cout << i + 1 << ". Ã–Ã°rencinin DoÃ°um Tarihini GG/AA/YYYY Cinsinden Giriniz: ";
+				cin >> Ã¶grenci[i].gun >> Ã¶grenci[i].ay >> Ã¶grenci[i].yil;
 
-				cout << i + 1 << ". Öğrencinin Okul Numarasını Giriniz: ";
-				cin >> ögrenciListe[i].No;
+				cout << i + 1 << ". Ã–Ã°rencinin Okul NumarasÃ½nÃ½ Giriniz: ";
+				cin >> Ã¶grenciListe[i].No;
 
-				cout << i + 1 << ". Öğrencinin 1. Kısa Sınav Notunu Giriniz: ";
-				ögrenciListe[i].KisaSinav1 = kontrol(0,100);
+				cout << i + 1 << ". Ã–Ã°rencinin 1. KÃ½sa SÃ½nav Notunu Giriniz: ";
+				Ã¶grenciListe[i].KisaSinav1 = kontrol(0,100);
 
-				cout << i + 1 << ". Öğrencinin 2. Kısa Sınav Notunu Giriniz: ";
-				ögrenciListe[i].KisaSinav2 = kontrol(0,100);
+				cout << i + 1 << ". Ã–Ã°rencinin 2. KÃ½sa SÃ½nav Notunu Giriniz: ";
+				Ã¶grenciListe[i].KisaSinav2 = kontrol(0,100);
 
-				cout << i + 1 << ". Öğrencinin 1. Ödev Notunu Giriniz: ";
-				ögrenciListe[i].Odev1 = kontrol(0, 100);
+				cout << i + 1 << ". Ã–Ã°rencinin 1. Ã–dev Notunu Giriniz: ";
+				Ã¶grenciListe[i].Odev1 = kontrol(0, 100);
 
-				cout << i + 1 << ". Öğrencinin 2. Ödev Notunu Giriniz: ";
-				ögrenciListe[i].Odev2 = kontrol(0, 100);
+				cout << i + 1 << ". Ã–Ã°rencinin 2. Ã–dev Notunu Giriniz: ";
+				Ã¶grenciListe[i].Odev2 = kontrol(0, 100);
 
-				cout << i + 1 << ". Öğrencinin Proje Notunu Giriniz: ";
-				ögrenciListe[i].Proje = kontrol(0, 100);
+				cout << i + 1 << ". Ã–Ã°rencinin Proje Notunu Giriniz: ";
+				Ã¶grenciListe[i].Proje = kontrol(0, 100);
 
-				cout << i + 1 << ". Öğrencinin Vize Notunu Giriniz: ";
-				ögrenciListe[i].Vize = kontrol(0, 100);
+				cout << i + 1 << ". Ã–Ã°rencinin Vize Notunu Giriniz: ";
+				Ã¶grenciListe[i].Vize = kontrol(0, 100);
 
-				cout << i + 1 << ". Öğrencinin Final Notunu Giriniz: ";
-				ögrenciListe[i].FinalNotu = kontrol(0, 100);
+				cout << i + 1 << ". Ã–Ã°rencinin Final Notunu Giriniz: ";
+				Ã¶grenciListe[i].FinalNotu = kontrol(0, 100);
 
 
-				DönemiciNot[i] = (ögrenciListe[i].Vize * 50 / 100) + (ögrenciListe[i].KisaSinav1 * 7 / 100) + (ögrenciListe[i].KisaSinav2 * 7 / 100)
-					+ (ögrenciListe[i].Odev1 * 10 / 100) + (ögrenciListe[i].Odev2 * 10 / 100) + (ögrenciListe[i].Proje * 16 / 100);
+				DÃ¶nemiciNot[i] = (Ã¶grenciListe[i].Vize * 50 / 100) + (Ã¶grenciListe[i].KisaSinav1 * 7 / 100) + (Ã¶grenciListe[i].KisaSinav2 * 7 / 100)
+					+ (Ã¶grenciListe[i].Odev1 * 10 / 100) + (Ã¶grenciListe[i].Odev2 * 10 / 100) + (Ã¶grenciListe[i].Proje * 16 / 100);
 
-				ögrenciNotu[i] = (DönemiciNot[i] * 55 / 100) + (ögrenciListe[i].FinalNotu * 45 / 100);
+				Ã¶grenciNotu[i] = (DÃ¶nemiciNot[i] * 55 / 100) + (Ã¶grenciListe[i].FinalNotu * 45 / 100);
 
-				HarfNotu[i] = harfnotu(ögrenciNotu[i]);
+				HarfNotu[i] = harfnotu(Ã¶grenciNotu[i]);
 				
 			}
 
 
-			int menüSecim2;
+			int menÃ¼Secim2;
 			
 			do
 			{
 				do
 				{
-					menü();
+					menÃ¼();
 					cout << endl;
-					cout << "Görüntülemek İstediğiniz Seçeneği Seçiniz" << endl;
-					cin >> menüSecim2; cout << endl;
-					switch (menüSecim2)
+					cout << "GÃ¶rÃ¼ntÃ¼lemek ÃstediÃ°iniz SeÃ§eneÃ°i SeÃ§iniz" << endl;
+					cin >> menÃ¼Secim2; cout << endl;
+					switch (menÃ¼Secim2)
 					{
 					case 1:
-						//öğrenciler fonksiyon ile 20'şer 20'şer listeleniyor
+						//Ã¶Ã°renciler fonksiyon ile 20'Ã¾er 20'Ã¾er listeleniyor
 						for (int i = 0; i < 100; i++)
 						{
-							listele(ögrenciNotu[i], ögrenciListe[i].Adi, ögrenciListe[i].Soyadi, HarfNotu[i], ögrenci[i].gun, ögrenci[i].ay, ögrenci[i].yil);
+							listele(Ã¶grenciNotu[i], Ã¶grenciListe[i].Adi, Ã¶grenciListe[i].Soyadi, HarfNotu[i], Ã¶grenci[i].gun, Ã¶grenci[i].ay, Ã¶grenci[i].yil);
 						}
 						break;
 
 					case 2:
-						//en büyük not fonksiyon ile hesaplanıp ekrana yazdırılıyor
+						//en bÃ¼yÃ¼k not fonksiyon ile hesaplanÃ½p ekrana yazdÃ½rÃ½lÃ½yor
 						for (int i = 0; i < 100; i++)
 						{
-							EnBüyük = enbüyüknot(ögrenciNotu[i]);
+							EnBÃ¼yÃ¼k = enbÃ¼yÃ¼knot(Ã¶grenciNotu[i]);
 						}
 
 						for (int i = 0; i < 100; i++)
 						{
-							if (ögrenciNotu[i] == EnBüyük)
+							if (Ã¶grenciNotu[i] == EnBÃ¼yÃ¼k)
 							{
-								cout << "ADI-SOYADI: " << ögrenciListe[i].Adi << " " << ögrenciListe[i].Soyadi << endl;
-								cout << "NOTU: " << ögrenciNotu[i] << endl << endl;
+								cout << "ADI-SOYADI: " << Ã¶grenciListe[i].Adi << " " << Ã¶grenciListe[i].Soyadi << endl;
+								cout << "NOTU: " << Ã¶grenciNotu[i] << endl << endl;
 							}
 						}
 
 						break;
 
 					case 3:
-						//en düşük not fonksiyon ile hesaplanıp ekrana yazdırılıyor
+						//en dÃ¼Ã¾Ã¼k not fonksiyon ile hesaplanÃ½p ekrana yazdÃ½rÃ½lÃ½yor
 						for (int i = 0; i < 100; i++)
 						{
-							EnKüçük = enküçüknot(ögrenciNotu[i]);
+							EnKÃ¼Ã§Ã¼k = enkÃ¼Ã§Ã¼knot(Ã¶grenciNotu[i]);
 						}
 
 						for (int i = 0; i < 100; i++)
 						{
-							if (ögrenciNotu[i] == EnKüçük)
+							if (Ã¶grenciNotu[i] == EnKÃ¼Ã§Ã¼k)
 							{
-								cout << "ADI-SOYADI: " << ögrenciListe[i].Adi << " " << ögrenciListe[i].Soyadi << endl;
-								cout << "NOTU: " << ögrenciNotu[i] << endl << endl;
+								cout << "ADI-SOYADI: " << Ã¶grenciListe[i].Adi << " " << Ã¶grenciListe[i].Soyadi << endl;
+								cout << "NOTU: " << Ã¶grenciNotu[i] << endl << endl;
 							}
 						}
 
 						break;
 
 					case 4:
-						//ortalama fonksiyon ile hesaplanıp ekrana yazdırılıyor
-						ort = ortalama(ögrenciNotu);
+						//ortalama fonksiyon ile hesaplanÃ½p ekrana yazdÃ½rÃ½lÃ½yor
+						ort = ortalama(Ã¶grenciNotu);
 
 						cout << ort << endl;
 						break;
 
 					case 5:
-						//standart sapma fonksiyon ile hesaplanıp ekrana yazdırılıyor
-						StandartSapma = standartSapma(ögrenciNotu);
+						//standart sapma fonksiyon ile hesaplanÃ½p ekrana yazdÃ½rÃ½lÃ½yor
+						StandartSapma = standartSapma(Ã¶grenciNotu);
 						cout << StandartSapma << endl;
 						break;
 
 					case 6:
-						// girilen aralıktaki notları gösterme
-						int alt, üst;
+						// girilen aralÃ½ktaki notlarÃ½ gÃ¶sterme
+						int alt, Ã¼st;
 
-						cout << "Bakmak İstediğiniz Not Aralığını Girin: (önce küçük notu giriniz.) ";
-						cin >> alt >> üst; cout << endl;
+						cout << "Bakmak ÃstediÃ°iniz Not AralÃ½Ã°Ã½nÃ½ Girin: (Ã¶nce kÃ¼Ã§Ã¼k notu giriniz.) ";
+						cin >> alt >> Ã¼st; cout << endl;
 
-						//değerler kontrol ediliyor
-						while (alt > üst)
+						//deÃ°erler kontrol ediliyor
+						while (alt > Ã¼st)
 						{
-							cout << "Önce Küçük Değer Giriniz!" << endl;
-							cin >> alt >> üst; cout << endl;
+							cout << "Ã–nce KÃ¼Ã§Ã¼k DeÃ°er Giriniz!" << endl;
+							cin >> alt >> Ã¼st; cout << endl;
 						}
 
-						//fonksiyon ile iki değer arasındaki notu alan öğrenciler listeleniyor
+						//fonksiyon ile iki deÃ°er arasÃ½ndaki notu alan Ã¶Ã°renciler listeleniyor
 						for (int i = 0; i < 100; i++)
 						{
-							aralık(alt, üst, ögrenciNotu[i], ögrenciListe[i].Adi, ögrenciListe[i].Soyadi, HarfNotu[i]);
+							aralÃ½k(alt, Ã¼st, Ã¶grenciNotu[i], Ã¶grenciListe[i].Adi, Ã¶grenciListe[i].Soyadi, HarfNotu[i]);
 						}
 
 						cout << endl;
 						break;
 
 					case 7:
-						// girilen değerin altındaki notlar fonksiyon yardımı ile gösteriliyor
+						// girilen deÃ°erin altÃ½ndaki notlar fonksiyon yardÃ½mÃ½ ile gÃ¶steriliyor
 						int inceleme;
 
-						cout << "Girdiğiniz Değerin Altında Kalan Notlara Bakmak İçin Bir Değer Girin: ";
+						cout << "GirdiÃ°iniz DeÃ°erin AltÃ½nda Kalan Notlara Bakmak ÃÃ§in Bir DeÃ°er Girin: ";
 						cin >> inceleme; cout << endl;
 
 						for (int i = 0; i < 100; i++)
 						{
-							altinigöster(ögrenciNotu[i], inceleme, ögrenciListe[i].Adi, ögrenciListe[i].Soyadi, HarfNotu[i]);
+							altinigÃ¶ster(Ã¶grenciNotu[i], inceleme, Ã¶grenciListe[i].Adi, Ã¶grenciListe[i].Soyadi, HarfNotu[i]);
 						}
 						break;
 
 					case 8:
-						//fonksiyon ile girilen değerin üstündeki notları gösterme
+						//fonksiyon ile girilen deÃ°erin Ã¼stÃ¼ndeki notlarÃ½ gÃ¶sterme
 						int inceleme2;
 
-						cout << "Girdiğiniz Değerin Üstünde Kalan Notlara Bakmak İçin Bir Değer Girin: ";
+						cout << "GirdiÃ°iniz DeÃ°erin ÃœstÃ¼nde Kalan Notlara Bakmak ÃÃ§in Bir DeÃ°er Girin: ";
 						cin >> inceleme2; cout << endl;
 
 						for (int i = 0; i < 100; i++)
 						{
-							üstünügöster(ögrenciNotu[i], inceleme2, ögrenciListe[i].Adi, ögrenciListe[i].Soyadi, HarfNotu[i]);
+							Ã¼stÃ¼nÃ¼gÃ¶ster(Ã¶grenciNotu[i], inceleme2, Ã¶grenciListe[i].Adi, Ã¶grenciListe[i].Soyadi, HarfNotu[i]);
 						}
 
 						cout << endl;
@@ -635,11 +635,11 @@ int main()
 						break;
 
 					default:
-						cout << "Lütfen Geçerli Bir Değer Giriniz!!!" << endl << endl;
+						cout << "LÃ¼tfen GeÃ§erli Bir DeÃ°er Giriniz!!!" << endl << endl;
 						break;
 					}
 
-				} while (menüSecim > 8 or menüSecim < 1);
+				} while (menÃ¼Secim > 8 or menÃ¼Secim < 1);
 
 				system("pause");
 				system("CLS");
@@ -649,7 +649,7 @@ int main()
 			break;
 
 		default:
-			cout << "Lütfen Geçerli Bir Değer Girin!" << endl;
+			cout << "LÃ¼tfen GeÃ§erli Bir DeÃ°er Girin!" << endl;
 			break;
 		}
 	} while (secim > 2 or secim < 1);
